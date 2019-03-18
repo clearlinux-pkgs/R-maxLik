@@ -4,7 +4,7 @@
 #
 Name     : R-maxLik
 Version  : 1.3.4
-Release  : 16
+Release  : 17
 URL      : https://cran.r-project.org/src/contrib/maxLik_1.3-4.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/maxLik_1.3-4.tar.gz
 Summary  : Maximum Likelihood Estimation and Related Tools
@@ -13,10 +13,12 @@ License  : GPL-2.0+
 Requires: R-dlm
 Requires: R-miscTools
 Requires: R-sandwich
+Requires: R-zoo
 BuildRequires : R-dlm
 BuildRequires : R-miscTools
 BuildRequires : R-sandwich
-BuildRequires : clr-R-helpers
+BuildRequires : R-zoo
+BuildRequires : buildreq-R
 
 %description
 optimization, and related tools.  It includes a unified way to call
@@ -32,11 +34,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1523317497
+export SOURCE_DATE_EPOCH=1552878269
 
 %install
+export SOURCE_DATE_EPOCH=1552878269
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1523317497
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -71,8 +73,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library maxLik|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  maxLik || :
 
 
 %files
@@ -98,3 +99,19 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/maxLik/help/paths.rds
 /usr/lib64/R/library/maxLik/html/00Index.html
 /usr/lib64/R/library/maxLik/html/R.css
+/usr/lib64/R/library/maxLik/tests/BFGSR.R
+/usr/lib64/R/library/maxLik/tests/BFGSR.Rout.save
+/usr/lib64/R/library/maxLik/tests/constraints.R
+/usr/lib64/R/library/maxLik/tests/constraints.Rout.save
+/usr/lib64/R/library/maxLik/tests/examples.R
+/usr/lib64/R/library/maxLik/tests/examples.Rout.save
+/usr/lib64/R/library/maxLik/tests/finalHessian.R
+/usr/lib64/R/library/maxLik/tests/finalHessian.Rout.save
+/usr/lib64/R/library/maxLik/tests/fitGammaDist.R
+/usr/lib64/R/library/maxLik/tests/fitGammaDist.Rout.save
+/usr/lib64/R/library/maxLik/tests/fitNormalDist_privateTest.Rout.save
+/usr/lib64/R/library/maxLik/tests/methods.R
+/usr/lib64/R/library/maxLik/tests/methods.Rout.save
+/usr/lib64/R/library/maxLik/tests/numericGradient.R
+/usr/lib64/R/library/maxLik/tests/numericGradient.Rout.save
+/usr/lib64/R/library/maxLik/tests/parameters_privateTest.Rout.save
