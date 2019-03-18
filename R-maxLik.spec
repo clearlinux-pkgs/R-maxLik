@@ -4,16 +4,12 @@
 #
 Name     : R-maxLik
 Version  : 1.3.4
-Release  : 17
+Release  : 18
 URL      : https://cran.r-project.org/src/contrib/maxLik_1.3-4.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/maxLik_1.3-4.tar.gz
 Summary  : Maximum Likelihood Estimation and Related Tools
 Group    : Development/Tools
 License  : GPL-2.0+
-Requires: R-dlm
-Requires: R-miscTools
-Requires: R-sandwich
-Requires: R-zoo
 BuildRequires : R-dlm
 BuildRequires : R-miscTools
 BuildRequires : R-sandwich
@@ -34,10 +30,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552878269
+export SOURCE_DATE_EPOCH=1552885631
 
 %install
-export SOURCE_DATE_EPOCH=1552878269
+export SOURCE_DATE_EPOCH=1552885631
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
