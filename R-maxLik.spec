@@ -4,19 +4,20 @@
 #
 Name     : R-maxLik
 Version  : 1.3.6
-Release  : 23
+Release  : 24
 URL      : https://cran.r-project.org/src/contrib/maxLik_1.3-6.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/maxLik_1.3-6.tar.gz
 Summary  : Maximum Likelihood Estimation and Related Tools
 Group    : Development/Tools
 License  : GPL-2.0+
-Requires: R-dlm
 Requires: R-miscTools
 Requires: R-sandwich
 BuildRequires : R-dlm
 BuildRequires : R-miscTools
 BuildRequires : R-sandwich
+BuildRequires : R-zoo
 BuildRequires : buildreq-R
+BuildRequires : util-linux
 
 %description
 optimization, and related tools.  It includes a unified way to call
@@ -31,13 +32,13 @@ optimization, and related tools.  It includes a unified way to call
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1558295555
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1571862517
 
 %install
-export SOURCE_DATE_EPOCH=1558295555
+export SOURCE_DATE_EPOCH=1571862517
 rm -rf %{buildroot}
-export LANG=C
+export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -66,7 +67,7 @@ R CMD INSTALL --preclean --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} 
 cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
