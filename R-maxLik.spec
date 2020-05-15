@@ -4,16 +4,14 @@
 #
 Name     : R-maxLik
 Version  : 1.3.8
-Release  : 28
+Release  : 29
 URL      : https://cran.r-project.org/src/contrib/maxLik_1.3-8.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/maxLik_1.3-8.tar.gz
 Summary  : Maximum Likelihood Estimation and Related Tools
 Group    : Development/Tools
 License  : GPL-2.0+
-Requires: R-dlm
 Requires: R-miscTools
 Requires: R-sandwich
-BuildRequires : R-dlm
 BuildRequires : R-miscTools
 BuildRequires : R-sandwich
 BuildRequires : buildreq-R
@@ -26,21 +24,22 @@ optimization, and related tools.  It includes a unified way to call
 
 %prep
 %setup -q -c -n maxLik
+cd %{_builddir}/maxLik
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1578694417
+export SOURCE_DATE_EPOCH=1589571737
 
 %install
-export SOURCE_DATE_EPOCH=1578694417
+export SOURCE_DATE_EPOCH=1589571737
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
