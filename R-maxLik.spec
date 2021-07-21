@@ -4,7 +4,7 @@
 #
 Name     : R-maxLik
 Version  : 1.4.8
-Release  : 40
+Release  : 41
 URL      : https://cran.r-project.org/src/contrib/maxLik_1.4-8.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/maxLik_1.4-8.tar.gz
 Summary  : Maximum Likelihood Estimation and Related Tools
