@@ -7,7 +7,7 @@
 #
 Name     : R-maxLik
 Version  : 1.5.2.1
-Release  : 58
+Release  : 59
 URL      : https://cran.r-project.org/src/contrib/maxLik_1.5-2.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/maxLik_1.5-2.1.tar.gz
 Summary  : Maximum Likelihood Estimation and Related Tools
